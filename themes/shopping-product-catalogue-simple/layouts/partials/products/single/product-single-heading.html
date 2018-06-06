@@ -1,0 +1,33 @@
+<h1>{{ .Title }}</h1>
+<p>
+    <span class="product-compare-price" style="text-decoration: line-through">{{ .Params.comparePrice }}</span>
+    <span class="product-actual-price">{{ .Params.actualPrice }}</span>
+    <span class="product-not-in-stock font-weight-bold" {{ if or (.Params.inStock) (eq .Params.actualPrice nil) }} style="display:none" {{end}}>— Sold Out</span>
+</p>
+<div>
+    <span>Variations:</span>
+    {{ range $index, $element := .Params.variants }}
+        <div class="form-check">
+            <input class="form-check-input"
+                   type="radio"
+                   name="group-"
+                   id="radio-{{ $index }}"
+                   value="{{ .optionCombination }}" />
+            <label class="form-check-label" for="radio-{{ $index }}">
+                <span>{{ $element.optionCombination }}: {{ $element.inStock }}</span>
+                <span>
+                    <span style="text-decoration: line-through">{{ $element.comparePrice }}</span>
+                    <span>{{ $element.actualPrice }}</span>
+                    <span {{ if $element.inStock }} style="display:none" {{end}}>— Sold Out</span>
+                </span>
+            </label>
+        </div>
+    {{ end }}
+</div>
+
+<script>
+    var productActualPrice  = {{ .Params.actualPrice }}
+    var productComparePrice  = {{ .Params.comparePrice }}
+    var productInStock = {{ .Params.inStock }}
+    var productVariants = JSON.parse({{ .Params.variants | jsonify }})
+</script>
