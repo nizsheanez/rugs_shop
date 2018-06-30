@@ -1,18 +1,18 @@
 <a class="col-6 col-lg-3" href="{{ .RelPermalink }}" style="color: inherit; margin-bottom: 1.5rem">
     <img class="b-lazy img-fluid text-center" data-src="{{ .Params.thumbnailImage }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
     <div>
-        <span style="font-size: 16px">{{ .Params.title }}</span>
-        <br/>
-        <ul style="font-size: 13px">
-            {{ range $index, $element := .Params.variants }}
+        <h6>{{ .Params.title }}</h6>
+        <ul class="small">
+            {{ range .Params.variants }}
             <li>
-                <span>{{ $element.title }}: </span>
+                <span>{{ .title }}: </span>
                 <span>
-                    <span style="text-decoration: line-through">{{ $element.comparePrice }}</span>
-                    <span>{{ $element.actualPrice }}</span>
-                    <span {{ if $element.inStock }} style="display:none" {{end}}>— Sold Out</span>
+                    <span style="text-decoration: line-through">{{ .comparePrice }}</span>
+                    <span>{{ .actualPrice }}</span>
+                    <span {{ if .inStock }} style="display:none" {{end}}>— Sold Out</span>
                 </span>
             </li>
+
             {{ end }}
         </ul>
         <span>

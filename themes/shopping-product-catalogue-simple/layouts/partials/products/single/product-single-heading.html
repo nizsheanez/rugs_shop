@@ -7,13 +7,13 @@
 <br/>
 <div>
     <ul>
-        {{ range $index, $element := .Params.variants }}
+        {{ range .Params.variants }}
         <li>
-            <span>{{ $element.title }}: </span>
+            <span>{{ .title }}: </span>
             <span>
-                <span style="text-decoration: line-through">{{ $element.comparePrice }}</span>
-                <span>{{ $element.actualPrice }}</span>
-                <span {{ if $element.inStock }} style="display:none" {{end}}>— Sold Out</span>
+                <span style="text-decoration: line-through">{{ .comparePrice }}</span>
+                <span>{{ .actualPrice }}</span>
+                <span {{ if .inStock }} style="display:none" {{end}}>— Sold Out</span>
             </span>
         </li>
         {{ end }}
