@@ -11,4 +11,4 @@
     "variants": []
 }
 
-**Insert Product description here****
+**Insert Product description here**

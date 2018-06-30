@@ -1,21 +1,17 @@
 ---
 title: Azure Blue De Stijl Inspired Bedside Retro Light
 date: 2018-05-10T08:02:34+05:30
-tags: ["Wall Light"]
-categories: ["Wall Light"]
-images: ["/img/azure-blue-de-stijl-bedside-retro-light-with-black-ring/1.jpg"]
-thumbnailImage: "/img/azure-blue-de-stijl-bedside-retro-light-with-black-ring/thumbnail.jpg"
-actualPrice: null
-comparePrice: null
-inStock: true
+categories: [Wall Light]
+images: [/img/azure-blue-de-stijl-bedside-retro-light-with-black-ring/1.jpg]
+thumbnailImage: /img/azure-blue-de-stijl-bedside-retro-light-with-black-ring/thumbnail.jpg
 variants: 
-  - optionCombination: "With extension wire"
+  - title: With extension wire
     comparePrice: null
-    actualPrice: "₹ 2917.00"
+    actualPrice: 2917.00
     inStock: true
-  - "optionCombination": "Without extension wire"
+  - title: Without extension wire
     comparePrice: null
-    actualPrice: "₹ 2000.00"
+    actualPrice: 2000.00
     inStock: false
 ---
 

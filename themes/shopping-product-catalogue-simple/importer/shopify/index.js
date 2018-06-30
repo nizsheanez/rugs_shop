@@ -54,7 +54,7 @@ function getFrontMatter(product) {
   } else {
     frontMatter.variants = product.variants.map(variant => {
         let frontMatterVariant = {};
-        frontMatterVariant.optionCombination = [variant.option1, variant.option2, variant.option3].filter(val => val != null);
+        frontMatterVariant.title = [variant.option1, variant.option2, variant.option3].filter(val => val != null);
         frontMatterVariant.actualPrice = variant.price;
         frontMatterVariant.comparePrice = variant.compare_at_price;
         frontMatterVariant.inStock = variant.available;

@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://store2-386e7.firebaseapp.com/"
 languageCode = "en-us"
 title = "Awesome Lighting Inc."
 theme = "hugo-shopping-product-catalogue-simple"

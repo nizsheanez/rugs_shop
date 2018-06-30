@@ -1,20 +1,40 @@
-<a class="col-6 col-lg-3" href="{{ .RelPermalink }}" style="color: inherit;">
+<a class="col-6 col-lg-3" href="{{ .RelPermalink }}" style="color: inherit; margin-bottom: 1.5rem">
     <img class="b-lazy img-fluid text-center" data-src="{{ .Params.thumbnailImage }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
-    <p class="text-left">
-        <span style="font-size: 13px">{{ .Params.title }}</span>
+    <div>
+        <span style="font-size: 16px">{{ .Params.title }}</span>
         <br/>
-        <span style="font-size: 16px">
-            {{ if .Params.actualPrice }}
+        <ul style="font-size: 13px">
+            {{ range $index, $element := .Params.variants }}
+            <li>
+                <span>{{ $element.title }}: </span>
+                <span>
+                    <span style="text-decoration: line-through">{{ $element.comparePrice }}</span>
+                    <span>{{ $element.actualPrice }}</span>
+                    <span {{ if $element.inStock }} style="display:none" {{end}}>— Sold Out</span>
+                </span>
+            </li>
+            {{ end }}
+        </ul>
+        <span>
+            <!-- {{ if .Params.actualPrice }}
                 {{ $.Scratch.Set "minimumPrice" (.Params.actualPrice | string) }}
             {{ else }}
-                {{ $.Scratch.Set "minimumPrice" "999999999999999"}}                 
+                {{ $.Scratch.Set "minimumPrice" "999999999999999"}} 
             {{ end }}
             {{ if .Params.inStock }}
                 {{ $.Scratch.Set "inStock" (.Params.inStock | string) }}
             {{ else }}
                 {{ $.Scratch.Set "inStock" "false" }}
-            {{ end }}
-            {{ range .Params.variants }}
+            {{ end }} 
+            {{ range $index, $element := .Params.variants }}
+                <div>
+                    <span>{{ $element.title }}: </span>
+                    <span>
+                        <span style="text-decoration: line-through">{{ $element.comparePrice }}</span>
+                        <span>{{ $element.actualPrice }}</span>
+                        <span {{ if $element.inStock }} style="display:none" {{end}}>— Sold Out</span>
+                    </span>
+                </div>
                 {{ $variantActualPrice := (.actualPrice | replaceRE "[^0-9.]+" "" | float )  }}
                 {{ $actualPrice := ($.Scratch.Get "minimumPrice" | replaceRE "[^0-9.]+" "" | float) }}
                 {{ if lt $variantActualPrice $actualPrice }}
@@ -26,8 +46,8 @@
                 {{ end }}
             {{ end }}
             {{ if eq ($.Scratch.Get "isMinimumVariantPrice") "true" }} From {{ end }}
-            {{ $.Scratch.Get "minimumPrice" }} 
-            {{ if not (eq ($.Scratch.Get "inStock") "true")}} <span class="font-weight-bold">— Sold Out</span> {{ end }}
+            {{ $.Scratch.Get "minimumPrice" }}  
+            {{ if not (eq ($.Scratch.Get "inStock") "true")}} <span class="font-weight-bold">— Sold Out</span> {{ end }} -->
         </span>
-    </p>
+    </div>
 </a>

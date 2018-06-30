@@ -1,15 +1,19 @@
-{
-    "title": "Retro Vintage Industrial Cage Pendant System",
-    "date": "2018-05-10T20:11:38+05:30",
-    "tags": ["Pendant Light"],
-    "categories": ["Pendant Light"],
-    "images": ["/img/retro-vintage-industrial-cage-pendant-system/1.png", "/img/retro-vintage-industrial-cage-pendant-system/2.png"],
-    "thumbnailImage": "/img/retro-vintage-industrial-cage-pendant-system/thumbnail.png",
-    "actualPrice": "₹ 3,744.00",
-    "comparePrice": null,
-    "inStock": true,
-    "variants": []
-}
+---
+title: Retro Vintage Industrial Cage Pendant System
+date: 2018-05-10T20:11:38+05:30
+categories: [Pendant Light]
+images: [/img/retro-vintage-industrial-cage-pendant-system/1.png, /img/retro-vintage-industrial-cage-pendant-system/2.png]
+thumbnailImage: /img/retro-vintage-industrial-cage-pendant-system/thumbnail.png
+variants: 
+  - title: Vintage, Large
+    comparePrice: null
+    actualPrice: 3,744.00
+    inStock: true
+  - title: Vintage, Small
+    comparePrice: null
+    actualPrice: 3,744.00
+    inStock: true
+---
 
 Rustic look comes with industrial chic and luxe finish.This steampunk pendant system
 is made of four wrought iron cage painted black and are complimented well with the

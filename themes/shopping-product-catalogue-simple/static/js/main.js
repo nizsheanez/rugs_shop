@@ -1,11 +1,11 @@
 $(function() {
     initializeLazyLoadOfImages();
-    $("input[type='radio']").change(function() {
-        selectPriceBasedOnVariant();
-    });
-    if (!_(productVariants).isEmpty()) {
-        selectPriceBasedOnVariant();
-    }
+    // $("input[type='radio']").change(function() {
+    //     selectPriceBasedOnVariant();
+    // });
+    // if (!_(productVariants).isEmpty()) {
+    //     selectPriceBasedOnVariant();
+    // }
 })
 
 function initializeLazyLoadOfImages() {
@@ -14,7 +14,7 @@ function initializeLazyLoadOfImages() {
 
 function getSelectedVariant(productVariants, selectedProductOption) {
     return _(productVariants).filter(function(productVariant) {
-        return _(productVariant.optionCombination).isEqual(selectedProductOption)
+        return _(productVariant.title).isEqual(selectedProductOption)
     }).first()
 }
 
