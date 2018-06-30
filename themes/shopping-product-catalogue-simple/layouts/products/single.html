@@ -13,14 +13,12 @@
 </header>
 <article class="container-fluid">
     <div class="row align-items-start">
-        
         <div class="sticky-top col-12 col-md-4 order-md-2 d-none d-md-block">
-            {{ partial "products/single/product-single-heading.html" . }} 
-            <div>{{ .Content }}</div>
+            {{ partial "products/single/product.html" . }} 
             {{ partial "fb_button.html" . }}
         </div>
         <div class="col-12 col-md-4 order-md-2 d-block d-md-none">
-            {{ partial "products/single/product-single-heading.html" . }} 
+            {{ partial "products/single/product.html" . }} 
             <div>{{ .Content }}</div>
             {{ partial "fb_button.html" . }}
         </div>
