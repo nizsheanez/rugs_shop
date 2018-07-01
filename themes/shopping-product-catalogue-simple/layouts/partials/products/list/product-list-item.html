@@ -1,22 +1,24 @@
-<a class="col-6 col-lg-3" href="{{ .RelPermalink }}" style="color: inherit; margin-bottom: 1.5rem">
-    <img class="b-lazy img-fluid text-center" data-src="{{ .Params.thumbnailImage }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
-    <div>
-        <h6>{{ .Params.title }}</h6>
-        <ul class="small">
-            {{ range .Params.variants }}
-            <li>
-                <span>{{ .title }}: </span>
-                <span>
-                    <span style="text-decoration: line-through">{{ .comparePrice }}</span>
-                    <span>{{ .actualPrice }}</span>
-                    <span {{ if .inStock }} style="display:none" {{end}}>— Sold Out</span>
-                </span>
-            </li>
-
-            {{ end }}
-        </ul>
+<article class="col-6 col-lg-3 mb-4">
+    <a href="{{ .RelPermalink }}" style="color: inherit;">
+        <img class="b-lazy img-fluid text-center" data-src="{{ .Params.thumbnailImage }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+        <main>
+            <h6>{{ .Params.title }}</h6>
+            <ul class="small">
+                {{ range .Params.variants }}
+                <li>
+                    <span>{{ .title }}: </span>
+                    <span>
+                        <span style="text-decoration: line-through">{{ .comparePrice }}</span>
+                        <span>{{ .actualPrice }}</span>
+                        <span {{ if .inStock }} style="display:none" {{end}}>— Sold Out</span>
+                    </span>
+                </li>
+                {{ end }}
+            </ul>
+        </main>
+        <!-- 
         <span>
-            <!-- {{ if .Params.actualPrice }}
+            {{ if .Params.actualPrice }}
                 {{ $.Scratch.Set "minimumPrice" (.Params.actualPrice | string) }}
             {{ else }}
                 {{ $.Scratch.Set "minimumPrice" "999999999999999"}} 
@@ -47,7 +49,8 @@
             {{ end }}
             {{ if eq ($.Scratch.Get "isMinimumVariantPrice") "true" }} From {{ end }}
             {{ $.Scratch.Get "minimumPrice" }}  
-            {{ if not (eq ($.Scratch.Get "inStock") "true")}} <span class="font-weight-bold">— Sold Out</span> {{ end }} -->
+            {{ if not (eq ($.Scratch.Get "inStock") "true")}} <span class="font-weight-bold">— Sold Out</span> {{ end }} 
         </span>
-    </div>
-</a>
+        -->
+    </a>
+</article>

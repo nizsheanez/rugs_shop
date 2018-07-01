@@ -2,3 +2,12 @@ baseURL = "https://store2-386e7.firebaseapp.com/"
 languageCode = "en-us"
 title = "THẢM ĐẸP SÀI GÒN"
 theme = "shopping-product-catalogue-simple"
+
+# Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
+googleAnalytics = ""
+enableRobotsTXT = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"

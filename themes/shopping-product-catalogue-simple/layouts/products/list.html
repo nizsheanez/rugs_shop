@@ -12,14 +12,17 @@
     </div>
 </header>
 <article class="container-fluid">
-    <div class="row">
+    <section class="row">
         {{ range .Data.Pages }} 
             {{ partial "products/list/product-list-item.html" . }} 
         {{ end }}
-    </div>
+    </section>
     <script>
     var productVariants = null;
     </script>
+    <aside>
+        {{ template "_internal/pagination.html" . }}
+    </aside>
 </article>
 <footer class="container-fluid">
     <nav class="navbar navbar-expand navbar-light justify-content-center">

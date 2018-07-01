@@ -1,0 +1,11 @@
+version: "3.6"
+
+services:
+  web:
+    image: nizsheanez/tdsg
+    build: ./
+    ports:
+      - 80:80
+    environment:
+      NGINX_HOST: tdsg.vn
+    restart: always
