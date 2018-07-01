@@ -13,6 +13,11 @@
 </header>
 <article class="container">
     <div class="row align-items-start">
+        <div class="col-12 col-md-8 order-md-1">
+            {{ range .Params.images }}
+                <img class="card-img mb-1 b-lazy img-fluid" data-src="{{ . }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+            {{ end }}
+        </div>
         <div class="col-12 col-md-4 order-md-2 d-none d-md-block">
             {{ partial "products/single/product.html" . }} 
         </div>
@@ -21,11 +26,7 @@
             <div>{{ .Content }}</div>
             <br/>
         </div>
-        <div class="col-12 col-md-8 order-md-1">
-            {{ range .Params.images }}
-                <img class="card-img mb-1 b-lazy img-fluid" data-src="{{ . }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
-            {{ end }}
-        </div>
+        
     </div>
 </article>
 <footer class="container">
