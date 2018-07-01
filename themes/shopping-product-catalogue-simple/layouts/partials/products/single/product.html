@@ -5,7 +5,7 @@
         <span class="product-actual-price">{{ .Params.actualPrice }}</span>
         <span class="product-not-in-stock font-weight-bold" {{ if or (.Params.inStock) (eq .Params.actualPrice nil) }} style="display:none" {{end}}>— Sold Out</span>
     </p> -->
-    <br/>
+    {{ partial "fb_button.html" . }}
 </header>
 <main>
     <ul>
