@@ -2,8 +2,8 @@
 title: Chiếu điều hòa và thảm lót
 date: 2018-05-11T22:35:06+05:30
 categories: [Wall Light]
-images: [/img/alessa/1.png, /img/alessa/2.jpg, /img/alessa/3.jpg, /img/alessa/4.jpg, /img/alessa/5.jpg, /img/alessa/6.jpg]
-thumbnailImage: /img/alessa/thumnail.png
+images: [/img/cooler/1.jpg]
+thumbnailImage: /img/cooler/1.jpg
 variants: 
   - title: 1
     comparePrice: null
