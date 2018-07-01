@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "THẢM ĐẸP SÀI GÒN"
 theme = "shopping-product-catalogue-simple"
 
-# Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
+Paginate = 100 # this is set low for demonstrating with dummy content. Set to a higher number
 googleAnalytics = ""
 enableRobotsTXT = true
 
@@ -11,3 +11,9 @@ enableRobotsTXT = true
   changefreq = "monthly"
   priority = 0.5
   filename = "sitemap.xml"
+
+[blackfriday]
+  angledQuotes = true
+  extensions = ["hardLineBreak"]
+  fractions = false
+  plainIDAnchors = true

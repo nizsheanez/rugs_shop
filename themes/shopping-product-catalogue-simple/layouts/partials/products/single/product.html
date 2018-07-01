@@ -1,11 +1,11 @@
-<header>
+<!-- <header>
     <h1>{{ .Title }}</h1>
-    <!-- <p>
+    <p>
         <span class="product-compare-price" style="text-decoration: line-through">{{ .Params.comparePrice }}</span>
         <span class="product-actual-price">{{ .Params.actualPrice }}</span>
         <span class="product-not-in-stock font-weight-bold" {{ if or (.Params.inStock) (eq .Params.actualPrice nil) }} style="display:none" {{end}}>— Sold Out</span>
-    </p> -->
-</header>
+    </p>
+</header> -->
 <main>
     <!-- <ul>
         {{ range .Params.variants }}
@@ -19,12 +19,34 @@
         </li>
         {{ end }}
     </ul> -->
-    <br />
     <div>
         {{ partial "fb_button.html" . }}
     </div>
     <br />
     <div>{{ .Content }}</div>
+    <hr/>
+    <div>
+        <p>🌟 🌟 🌟THẢM ĐẸP SÀI GÒN 🌟 🌟 🌟</p>
+        <p>
+        CHUYÊN SỈ & LẺ <br/>
+        SHIP HÀNG TOÀN QUỐC<br/>
+        </p>
+        <p>
+        Link <a href="https://goo.gl/zZvwzf">MẪU THẢM ĐẦY ĐỦ</a><br/>
+        Cân nặng từ 1,3kg đến 2,6kg
+        </p>
+        <p>
+        CHUYÊN SỈ & LẺ THẢM TRANG TRÍ <br/>
+        SHIP COD TOÀN QUỐC<br/>
+        ĐỊA CHỈ: 145/19 Nguyễn Đình Chính, phường 11, Quận Phú Nhuận<br/>
+        </p>
+        <p><b>Hotline:</b> 0909864642</p>
+        
+        <p>
+        Weight from 1,3kg to 2,6kg<br/>
+        Address: 145/19 Nguyễn Đình Chính, phường 11, Quận Phú Nhuận
+        </p>
+    </div>
     <!-- 
     <span>Variants:</span>
     {{ range $index, $element := .Params.variants }}
@@ -54,5 +76,5 @@
     // var productActualPrice  = {{ .Params.actualPrice }}
     // var productComparePrice  = {{ .Params.comparePrice }}
     // var productInStock = {{ .Params.inStock }}
-    var productVariants = JSON.parse({{ .Params.variants | jsonify }})
+    // var productVariants = JSON.parse({{ .Params.variants | jsonify }})
 </script>
