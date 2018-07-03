@@ -17,3 +17,6 @@ enableRobotsTXT = true
   extensions = ["hardLineBreak"]
   fractions = false
   plainIDAnchors = true
+
+[imaging]
+quality = 100
