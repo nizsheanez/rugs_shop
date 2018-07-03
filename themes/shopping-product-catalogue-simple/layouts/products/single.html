@@ -14,8 +14,18 @@
 <article class="container">
     <div class="row align-items-start">
         <div class="col-12 col-md-8 order-md-1">
-            {{ range .Params.images }}
-                <img class="card-img mb-1 b-lazy img-fluid" data-src="{{ . }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+            {{ range .Resources.ByType "image" }}
+                {{ $imageXL := .Resize "730x" }}
+                {{ $imageLG := .Resize "610x" }}
+                {{ $imageMD := .Resize "450x" }}
+                {{ $imageSM := .Resize "370x" }}
+                ​<picture>
+                    <source data-srcset="{{ $imageXL.RelPermalink }}" media="(min-width: 75em)">
+                    <source data-srcset="{{ $imageLG.RelPermalink }}" media="(min-width: 62em)">
+                    <source data-srcset="{{ $imageMD.RelPermalink }}" media="(min-width: 48em)">
+                    <source data-srcset="{{ $imageSM.RelPermalink }}" media="(min-width: 34em)">
+                    <img class="b-lazy mb-1 card-img img-fluid text-center" data-src="{{ $imageSM.RelPermalink }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+                </picture>
             {{ end }}
         </div>
         <div class="col-12 col-md-4 order-md-2 d-none d-md-block">

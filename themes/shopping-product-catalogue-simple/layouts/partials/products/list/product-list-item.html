@@ -1,6 +1,18 @@
-<article class="col-6 col-lg-3 mb-4">
+<article class="col-6 col-lg-4 mb-5">
     <a href="{{ .RelPermalink }}" style="color: inherit;">
-        <img class="b-lazy img-fluid text-center" data-src="{{ .Params.thumbnailImage }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+        {{ range first 1 (.Resources.ByType "image") }}
+            {{ $imageXL := .Resize "380x" }}
+            {{ $imageLG := .Resize "380x" }}
+            {{ $imageMD := .Resize "360x" }}
+            {{ $imageSM := .Resize "270x" }}
+            ​<picture>
+                <source data-srcset="{{ $imageXL.RelPermalink }}" media="(min-width: 75em)">
+                <source data-srcset="{{ $imageLG.RelPermalink }}" media="(min-width: 62em)">
+                <source data-srcset="{{ $imageMD.RelPermalink }}" media="(min-width: 48em)">
+                <source data-srcset="{{ $imageSM.RelPermalink }}" media="(min-width: 34em)">
+                <img class="b-lazy img-fluid text-center" data-src="{{ $imageSM.RelPermalink }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" />
+            </picture>
+        {{ end }}
         <main>
             <!-- <h6>{{ .Params.title }}</h6> -->
             <!-- <ul class="small">
