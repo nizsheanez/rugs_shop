@@ -2,7 +2,6 @@
 title: 1
 date: 2018-05-11T22:35:06+05:30
 categories: [Wall Light]
-thumbnailImage: /img/rugs/01.jpg
 variants: []
 ---
 
