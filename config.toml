@@ -20,3 +20,9 @@ enableRobotsTXT = true
 
 [imaging]
 quality = 100
+
+
+[permalinks]
+  products = "/products/:title/"
+  blog = "/blog/:year/:monthname/:title/"
+

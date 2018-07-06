@@ -5,7 +5,7 @@
             {{ $imageLG := .Resize "380x" }}
             {{ $imageMD := .Resize "360x" }}
             {{ $imageSM := .Resize "270x" }}
-            ​<picture>
+            <picture>
                 <source data-srcset="{{ $imageXL.RelPermalink }}" media="(min-width: 75em)">
                 <source data-srcset="{{ $imageLG.RelPermalink }}" media="(min-width: 62em)">
                 <source data-srcset="{{ $imageMD.RelPermalink }}" media="(min-width: 48em)">
