@@ -1,0 +1,9 @@
+@import "bootstrap.scss";
+
+@import "@material/button/mdc-button";
+
+.haha {
+  @include mdc-button-ink-color(teal);
+  @include mdc-states(teal);
+}
+

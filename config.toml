@@ -4,7 +4,7 @@ title = "THẢM ĐẸP SÀI GÒN"
 theme = "shopping-product-catalogue-simple"
 
 Paginate = 100 # this is set low for demonstrating with dummy content. Set to a higher number
-googleAnalytics = ""
+googleAnalytics = "UA-122492141-1"
 enableRobotsTXT = true
 
 [sitemap]
