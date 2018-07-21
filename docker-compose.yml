@@ -10,7 +10,7 @@ services:
       - ./:/src
     environment:
       - HUGO_ENV=production 
-    command: hugo serve --bind='0.0.0.0' --port=80 --appendPort=false --baseURL='http://tdsg.vn/' --ignoreCache --cacheDir=/tmp/hugo_cache/ --renderToDisk=true
+    command: hugo serve --bind='0.0.0.0' --port=80 --appendPort=false --baseURL='http://tdsg.vn/' --ignoreCache --cacheDir=/tmp/hugo_cache/ --renderToDisk=true --disableLiveReload=true
     restart: always
 
   admin:  
