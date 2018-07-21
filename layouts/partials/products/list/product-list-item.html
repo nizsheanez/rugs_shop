@@ -6,20 +6,20 @@
             {{ $imageMD := .Resize "360x" }}
             {{ $imageSM := .Resize "270x" }}
             <picture>
-                <source srcset="{{ $imageXL.RelPermalink }}" media="(min-width: 75em)">
-                <source srcset="{{ $imageLG.RelPermalink }}" media="(min-width: 62em)">
-                <source srcset="{{ $imageMD.RelPermalink }}" media="(min-width: 48em)">
-                <source srcset="{{ $imageSM.RelPermalink }}" media="(min-width: 34em)">
+                <source data-srcset="{{ $imageXL.RelPermalink }}" media="(min-width: 75em)">
+                <source data-srcset="{{ $imageLG.RelPermalink }}" media="(min-width: 62em)">
+                <source data-srcset="{{ $imageMD.RelPermalink }}" media="(min-width: 48em)">
+                <source data-srcset="{{ $imageSM.RelPermalink }}" media="(min-width: 34em)">
                 <img class="b-lazy img-fluid card-img-top" alt="Card image cap" 
-                    src="{{ $imageSM.RelPermalink }}" 
+                    data-src="{{ $imageSM.RelPermalink }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
                     style="max-width: 100%; height: auto;"
                  />
             </picture>
         {{ end }}
     </a>
     <a  href="{{ .RelPermalink }}" style="color: inherit;" class="card-body"></a>
-    <!-- <a  href="{{ .RelPermalink }}" style="color: inherit;" class="card-footer">
+    <a  href="{{ .RelPermalink }}" style="color: inherit;" class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>
-    </a> -->
+    </a>
         
 </article>
