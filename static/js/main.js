@@ -1,15 +1,14 @@
-// var msnry = new Masonry( '#products', {
-//     // options...
-//     itemSelector: '.card',
-//     columnWidth: '.grid-sizer',
-//     percentPosition: true,
-//     gutter: 20,
-//     transitionDuration: '0.4s',
-//     stagger: '0.03s',
-//     horizontalOrder: true
-// });
+var msnry = new Masonry( '#products', {
+    // options...
+    itemSelector: '.card',
+    columnWidth: '.grid-sizer',
+    percentPosition: true,
+    gutter: 20,
+    // transitionDuration: '0.2s',
+    // stagger: '0.03s',
+    horizontalOrder: true
+});
 
-// $
 
 $(function() {
     initializeLazyLoadOfImages();
@@ -26,19 +25,18 @@ $(function() {
 })
 
 $(document).ready(function() {
-    var $grid = $('#products').masonry({
-        // options...
-        itemSelector: '.card',
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        gutter: 20,
-        transitionDuration: '0.4s',
-        stagger: '0.03s',
-        horizontalOrder: true
+    // var $grid = $('#products').masonry({
+    //     // options...
+    //     itemSelector: '.card',
+    //     columnWidth: '.grid-sizer',
+    //     percentPosition: true,
+    //     gutter: 20,
+    //     transitionDuration: '0.4s',
+    //     stagger: '0.03s',
+    //     horizontalOrder: true
+    // });
 
-    });
-
-    $grid.imagesLoaded().progress( function() {
+    $('#products').imagesLoaded().progress( function() {
         $grid.masonry('layout');
     });
 });
