@@ -5,7 +5,7 @@ services:
     image: nizsheanez/tdsg
     build: ./infra/hugo
     ports:
-      - "1313:1313"
+      - "80:1313"
     volumes:
       - ./:/src
     environment:
