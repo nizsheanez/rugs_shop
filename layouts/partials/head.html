@@ -2,10 +2,16 @@
 {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }} 
 <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}img/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="{{ "bootstrap/css/bootstrap.min.css" | absURL }}">
-<link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
 
-<link rel="preload" href="{{ "js/jquery.min.js" | absURL }}" as="script">
-<link rel="preload" href="{{ "js/masonry.pkgd.min.js" | absURL }}" as="script">
+{{ range (slice "bootstrap/css/bootstrap.css" "css/main.css" ) }}
+    {{ $css := resources.Get . | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+{{end}}
+
+{{ range (slice "js/jquery.min.js" "js/masonry.pkgd.min.js") }}
+    {{ $js := resources.Get . | minify | fingerprint "sha512" }}
+    <link rel="preload" href="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" as="script">
+{{end}}
+
 <!-- <link rel="preload" href="{{ "bootstrap/js/bootstrap.bundle.min.js" | absURL }}" as="script"> -->
 
