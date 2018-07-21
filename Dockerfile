@@ -1,12 +1,15 @@
-FROM jojomi/hugo:latest as build
+FROM jojomi/hugo:latest as builder_hugo
 
-WORKDIR /app
-ADD . /app
+FROM alpine
 
-RUN HUGO_ENV=production hugo
+RUN apk add --no-cache curl
 
-FROM nginx:alpine
+COPY --from=builder_hugo /usr/local/sbin/hugo /usr/local/sbin/hugo
 
-COPY --from=build ./app/public /usr/share/nginx/html
+VOLUME /src
+VOLUME /output
+WORKDIR /src
 
+EXPOSE 1313
 
+CMD [ "hugo", "serve", "--bind='0.0.0.0'"]

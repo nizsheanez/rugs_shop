@@ -3,7 +3,6 @@ title: {{ replace .Name -   | title }}
 date: {{ .Date }}
 categories: []
 images: []
-thumbnailImage: 
 variants: 
   - title: Chrome, 19 x 24 x 23cm
     comparePrice: null
