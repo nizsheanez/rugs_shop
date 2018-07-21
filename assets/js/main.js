@@ -1,10 +1,10 @@
 $(function() {
     initializeLazyLoadOfImages();
+    initializeMasonry();
 })
 
-$(document).ready(function() {
+function initializeMasonry() {
     var $grid = $('#products').masonry({
-        // options...
         itemSelector: '.card',
         columnWidth: '.grid-sizer',
         percentPosition: true,
@@ -17,7 +17,8 @@ $(document).ready(function() {
     $grid.imagesLoaded().progress(function() {
         $grid.masonry('layout');
     });
-});
+}
+
 
 function initializeLazyLoadOfImages() {
     // var bLazy = new Blazy({

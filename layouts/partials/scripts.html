@@ -1,4 +1,5 @@
-{{ $jsFiles := (slice "js/jquery.min.js" "js/masonry.pkgd.min.js" "js/imagesloaded.pkgd.min.js" "js/main.js")}}
+<!-- {{ $jsFiles := (slice "js/jquery.min.js" "js/masonry.pkgd.min.js" "js/imagesloaded.pkgd.min.js" "js/main.js")}} -->
+{{ $jsFiles := (slice "node_modules/jquery/dist/jquery.slim.js" "js/masonry.pkgd.min.js" "js/imagesloaded.pkgd.min.js" "js/main.js")}}
 {{ range $jsFiles }}
     {{ $js := resources.Get . | minify | fingerprint "sha512" }}
     <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" ></script>

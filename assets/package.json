@@ -9,12 +9,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "blazy": "^1.8.2",
-    "bootstrap": "^4.1.2",
-    "holderjs": "^2.9.4",
-    "imagesloaded": "^4.1.4",
     "jquery": "^3.3.1",
+    "bootstrap": "^4.1.2",
+    "blazy": "^1.8.2",
     "masonry-layout": "^4.2.2",
-    "st-img": "^0.3.0"
+    "imagesloaded": "^4.1.4"
   }
 }
