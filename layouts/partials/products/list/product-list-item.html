@@ -1,17 +1,17 @@
 <article class="card mb-4">
-    <a  href="{{ .RelPermalink }}" style="color: inherit;" class="card-img-top">
+    <a  href="{{ .RelPermalink }}" style="color: inherit;">
         {{ range first 1 (.Resources.ByType "image") }}
             {{ $imageXL := .Resize "380x" }}
             {{ $imageLG := .Resize "380x" }}
             {{ $imageMD := .Resize "360x" }}
             {{ $imageSM := .Resize "270x" }}
             <picture>
-                <source data-srcset="{{ $imageXL.RelPermalink }}" media="(min-width: 75em)">
-                <source data-srcset="{{ $imageLG.RelPermalink }}" media="(min-width: 62em)">
-                <source data-srcset="{{ $imageMD.RelPermalink }}" media="(min-width: 48em)">
-                <source data-srcset="{{ $imageSM.RelPermalink }}" media="(min-width: 34em)">
-                <img class="b-lazy img-fluid card-img-top" alt="Card image cap" 
-                    data-src="{{ $imageSM.RelPermalink }}" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+                <source srcset="{{ $imageXL.RelPermalink }}" media="(min-width: 75em)">
+                <source srcset="{{ $imageLG.RelPermalink }}" media="(min-width: 62em)">
+                <source srcset="{{ $imageMD.RelPermalink }}" media="(min-width: 48em)">
+                <source srcset="{{ $imageSM.RelPermalink }}" media="(min-width: 34em)">
+                <img class="img-fluid card-img-top" alt="Card image cap" 
+                    src="{{ $imageSM.RelPermalink }}" 
                     style="max-width: 100%; height: auto;"
                  />
             </picture>

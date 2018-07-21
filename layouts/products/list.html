@@ -3,7 +3,7 @@
 {{ partial "common/site-main-nav.html" . }}     
 
 <article class="container">
-    <div class="card-columns">
+    <div class="card-columns products">
         {{ range $key, $value := .Data.Pages }} 
         
             {{ partial "products/list/product-list-item.html" . }} 
