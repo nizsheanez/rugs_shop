@@ -1,3 +1,22 @@
 .products .card {
-    min-height: 200px
+    min-height: 50px
+}
+
+@media (min-width: 576px) {
+    .products .card {
+        min-height: 90px
+    }
+}
+@media (min-width: 768px) {
+    .products .card {
+        min-height: 140px
+    }
+}
+@media (min-width: 992px) {
+    .products .card {
+        min-height: 200px
+    }
+}
+
+@media (min-width: 1200px) {
 }

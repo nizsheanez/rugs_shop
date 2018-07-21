@@ -9,9 +9,9 @@ $(function() {
 })
 
 function initializeLazyLoadOfImages() {
-    var bLazy = new Blazy({
-        loadInvisible: true
-    });
+    // var bLazy = new Blazy({
+    //     loadInvisible: true
+    // });
 }
 
 function getSelectedVariant(productVariants, selectedProductOption) {
