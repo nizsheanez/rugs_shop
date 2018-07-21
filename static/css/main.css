@@ -1,3 +1,14 @@
+/* #products {
+    display: grid;
+    grid-column-gap: 50px;
+}
+
+#products .product {} */
+/* fluid 5 columns */
+#products .grid-sizer,
+#products .card { margin-bottom: 20px;  float: left; width: 32%; }
+
+/* 
 .products .card {
     min-height: 50px
 }
@@ -19,4 +30,4 @@
 }
 
 @media (min-width: 1200px) {
-}
+} */

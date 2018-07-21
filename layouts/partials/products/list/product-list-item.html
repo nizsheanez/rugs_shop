@@ -1,4 +1,4 @@
-<article class="card mb-4">
+<article class="card">
     <a  href="{{ .RelPermalink }}" style="color: inherit;">
         {{ range first 1 (.Resources.ByType "image") }}
             {{ $imageXL := .Resize "380x" }}

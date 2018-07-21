@@ -12,6 +12,7 @@
     "blazy": "^1.8.2",
     "bootstrap": "^4.1.2",
     "holderjs": "^2.9.4",
-    "jquery": "^3.3.1"
+    "jquery": "^3.3.1",
+    "masonry-layout": "^4.2.2"
   }
 }

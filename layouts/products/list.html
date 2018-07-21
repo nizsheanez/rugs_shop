@@ -3,7 +3,8 @@
 {{ partial "common/site-main-nav.html" . }}     
 
 <article class="container">
-    <div class="card-columns products">
+    <div id="products">
+        <div class="grid-sizer"></div>
         {{ range $key, $value := .Data.Pages }} 
         
             {{ partial "products/list/product-list-item.html" . }} 
