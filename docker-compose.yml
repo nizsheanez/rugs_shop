@@ -17,9 +17,7 @@ services:
     image: nizsheanez/tdsg-admin
     build: ./admin
     ports:
-      - "81:81"
-    environment:
-      - HUGO_ENV=production 
+      - "83:83"
     volumes:
       - ./:/srv
       - ./admin/filebrowser:/etc

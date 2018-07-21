@@ -1,0 +1,7 @@
+{
+    "port": 83,
+    "noAuth": false,
+    "address": "",
+    "database": "/etc/filebrowser.db",
+    "plugin": "http.hugo"
+}
