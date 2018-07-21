@@ -1,23 +1,18 @@
-var msnry = new Masonry( '#products', {
-    // options...
-    itemSelector: '.card',
-    columnWidth: '.grid-sizer',
-    percentPosition: true,
-    gutter: 20,
-    // transitionDuration: '0.2s',
-    // stagger: '0.03s',
-    horizontalOrder: true
-});
-
-
 $(function() {
     initializeLazyLoadOfImages();
-    
 })
 
 $(document).ready(function() {
-    
-    var $grid = $('#products');
+    var $grid = $('#products').masonry({
+        // options...
+        itemSelector: '.card',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        gutter: 20,
+        // transitionDuration: '0.2s',
+        // stagger: '0.03s',
+        horizontalOrder: true
+    });
     
     $grid.imagesLoaded().progress(function() {
         $grid.masonry('layout');
