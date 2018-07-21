@@ -5,10 +5,10 @@
 
 #products .product {} */
 /* fluid 5 columns */
-#products .grid-sizer, #products .card { margin-bottom: 20px;  float: left; }
+#products .grid-sizer, #products .card { margin-bottom: 20px; float: left;  width: 46%;}
 
 @media (min-width: 576px) {
-    #products .grid-sizer, #products .card { width: 48%; }
+    #products .grid-sizer, #products .card { width: 46%; }
 }
 
 @media (min-width: 768px) {
