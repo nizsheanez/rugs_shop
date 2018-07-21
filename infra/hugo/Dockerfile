@@ -12,4 +12,4 @@ WORKDIR /src
 
 EXPOSE 1313
 
-CMD [ "hugo", "serve", "--bind='0.0.0.0'"]
+CMD [ "hugo", "serve", "--bind='0.0.0.0'", "--port=80"]

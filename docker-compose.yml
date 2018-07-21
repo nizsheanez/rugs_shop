@@ -5,12 +5,12 @@ services:
     image: nizsheanez/tdsg
     build: ./infra/hugo
     ports:
-      - "80:1313"
+      - "80:80"
     volumes:
       - ./:/src
     environment:
       - HUGO_ENV=production 
-    command: hugo serve --bind='0.0.0.0'
+    command: hugo serve --bind='0.0.0.0' --port=80
     restart: always
 
   admin:  
@@ -20,5 +20,5 @@ services:
       - "81:81"
     volumes:
       - ./:/srv
-      - ./admin/filebrowser:/etc
+      - ./infra/filebrowser:/etc
     restart: always
