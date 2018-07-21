@@ -19,7 +19,7 @@ $(document).ready(function() {
     
     var $grid = $('#products');
     
-    $grid.imagesLoaded(function() {
+    $grid.imagesLoaded().progress(function() {
         $grid.masonry('layout');
     });
 });
