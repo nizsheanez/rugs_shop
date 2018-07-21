@@ -19,7 +19,7 @@ services:
       VIRTUAL_HOST: ${HOST}
     expose:
       - 80
-    command: hugo serve --port=80 --appendPort=false --baseURL='http://${HOST}/' --disableLiveReload=true
+    command: hugo serve --bind='0.0.0.0' --port=80 --appendPort=false --baseURL='http://${HOST}/' --disableLiveReload=true
     restart: always
 
   admin:  
