@@ -2,7 +2,7 @@ FROM hacdias/filebrowser:v1.8.0 as builder_filebrowser
 
 FROM alpine
 
-RUN apk add --no-cache curl
+RUN apk add --no-cache curl 
 
 COPY --from=builder_filebrowser /filebrowser /usr/local/bin/filebrowser
 

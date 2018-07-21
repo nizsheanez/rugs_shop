@@ -3,7 +3,7 @@ version: "3.5"
 services:
   web:
     image: nizsheanez/tdsg
-    build: ./
+    build: ./infra/hugo
     ports:
       - "1313:1313"
     volumes:
@@ -15,9 +15,9 @@ services:
 
   admin:  
     image: nizsheanez/tdsg-admin
-    build: ./admin
+    build: ./infra/filebrowser
     ports:
-      - "83:83"
+      - "81:81"
     volumes:
       - ./:/srv
       - ./admin/filebrowser:/etc
