@@ -1,4 +1,4 @@
-has_changes = git diff-index --quiet HEAD --
+has_changes = $(git diff-index --quiet HEAD --)
 auto-save:
 	has_changes || git stash
 	git pull 
