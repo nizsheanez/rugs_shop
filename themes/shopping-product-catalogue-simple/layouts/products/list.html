@@ -3,11 +3,14 @@
 {{ partial "common/site-main-nav.html" . }}     
 
 <article class="container">
-    <section class="row">
-        {{ range .Data.Pages }} 
+    <div class="card-columns">
+        {{ range $key, $value := .Data.Pages }} 
+        
             {{ partial "products/list/product-list-item.html" . }} 
+
         {{ end }}
-    </section>
+    </div>
+
     <script>
     var productVariants = null;
     </script>
