@@ -10,7 +10,7 @@ services:
       - ./:/src
     environment:
       - HUGO_ENV=production 
-    command: hugo serve --bind='0.0.0.0' --port=80
+    command: hugo serve --bind='0.0.0.0' --port=80 --base-url='https://tdsg.vn'
     restart: always
 
   admin:  
