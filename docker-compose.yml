@@ -17,7 +17,7 @@ services:
     image: nizsheanez/tdsg-admin
     build: ./infra/filebrowser
     ports:
-      - "81:81"
+      - "81:80"
     volumes:
       - ./:/srv
       - ./infra/filebrowser:/etc

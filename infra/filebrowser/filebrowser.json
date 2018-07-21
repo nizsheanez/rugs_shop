@@ -1,5 +1,5 @@
 {
-    "port": 83,
+    "port": 80,
     "noAuth": false,
     "address": "",
     "database": "/etc/filebrowser.db",
