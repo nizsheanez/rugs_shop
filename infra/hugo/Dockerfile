@@ -1,4 +1,4 @@
-FROM jojomi/hugo:latest as builder_hugo
+FROM jojomi/hugo:0.44 as builder_hugo
 
 FROM alpine
 
@@ -10,6 +10,6 @@ VOLUME /src
 VOLUME /output
 WORKDIR /src
 
-EXPOSE 1313
+EXPOSE 80
 
 CMD [ "hugo", "serve", "--bind='0.0.0.0'", "--port=80"]

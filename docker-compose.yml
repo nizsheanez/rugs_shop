@@ -1,24 +1,36 @@
 version: "3.5"
 
 services:
-  web:
-    image: nizsheanez/tdsg
-    build: ./infra/hugo
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy
     ports:
       - "80:80"
     volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  web:
+    image: nizsheanez/tdsg
+    build: ./infra/hugo
+    volumes:
       - ./:/src
     environment:
-      - HUGO_ENV=production 
-    command: hugo serve --bind='0.0.0.0' --port=80 --appendPort=false --baseURL='http://tdsg.vn/' --ignoreCache --cacheDir=/tmp/hugo_cache/ --renderToDisk=true --disableLiveReload=true
+      HUGO_ENV: production 
+      VIRTUAL_HOST: ${HOST}
+    expose:
+      - 80
+    command: hugo serve --bind='0.0.0.0' --port=80 --appendPort=false --baseURL='http://${HOST}/' --disableLiveReload=true
     restart: always
 
   admin:  
     image: nizsheanez/tdsg-admin
     build: ./infra/filebrowser
-    ports:
-      - "81:80"
+    environment:
+      VIRTUAL_HOST: admin.${HOST}
+    expose:
+      - 80
     volumes:
       - ./:/srv
       - ./infra/filebrowser:/etc
     restart: always
+
