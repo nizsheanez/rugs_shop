@@ -3,12 +3,17 @@
 <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}img/favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{{ range (slice "bootstrap/css/bootstrap.css" "css/main.css" ) }}
-    {{ $css := resources.Get . | minify | fingerprint "sha512" }}
+{{ range (slice "bootstrap/scss/bootstrap.scss") }}
+    {{ $css := resources.Get . | toCSS | minify | fingerprint "sha512" }}
     <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
 {{end}}
 
-{{ range (slice "js/jquery.min.js" "js/masonry.pkgd.min.js") }}
+{{ range (slice "css/main.css" ) }}
+    {{ $css := resources.Get . | toCSS | minify | fingerprint "sha512" }}
+    <link rel="stylesheet" href="{{ $css.Permalink }}" integrity="{{ $css.Data.Integrity }}">
+{{end}}
+
+{{ range (slice "js/jquery.slim.min.js" "js/masonry.pkgd.min.js") }}
     {{ $js := resources.Get . | minify | fingerprint "sha512" }}
     <link rel="preload" href="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" as="script">
 {{end}}

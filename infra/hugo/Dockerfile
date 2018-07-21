@@ -1,15 +1,9 @@
-FROM jojomi/hugo:0.44 as builder_hugo
-
-FROM alpine
+FROM klakegg/hugo:0.44-ext-alpine 
 
 RUN apk add --no-cache curl
 
-COPY --from=builder_hugo /usr/local/sbin/hugo /usr/local/sbin/hugo
-
-VOLUME /src
-VOLUME /output
-WORKDIR /src
+# ENV HUGO_BIND="0.0.0.0"
 
 EXPOSE 80
-
-CMD [ "hugo", "serve", "--bind='0.0.0.0'", "--port=80"]
+ENTRYPOINT [  ]
+CMD [ "hugo", "serve", "--port=80"]
