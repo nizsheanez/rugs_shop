@@ -12,67 +12,17 @@ var msnry = new Masonry( '#products', {
 
 $(function() {
     initializeLazyLoadOfImages();
-    // $("input[type='radio']").change(function() {
-    //     selectPriceBasedOnVariant();
-    // });
-    // if (!_(productVariants).isEmpty()) {
-    //     selectPriceBasedOnVariant();
-    // }
-
- 
     
-
 })
 
 $(document).ready(function() {
-    // var $grid = $('#products').masonry({
-    //     // options...
-    //     itemSelector: '.card',
-    //     columnWidth: '.grid-sizer',
-    //     percentPosition: true,
-    //     gutter: 20,
-    //     transitionDuration: '0.4s',
-    //     stagger: '0.03s',
-    //     horizontalOrder: true
-    // });
-
-    $('#products').imagesLoaded().progress( function() {
+    
+    var $grid = $('#products');
+    
+    $grid.imagesLoaded(function() {
         $grid.masonry('layout');
     });
 });
-
-
-// function resizeGridItem(item){
-//     grid = document.getElementsByClassName("products")[0];
-//     rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
-//     rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
-//     rowSpan = Math.ceil((item.querySelector('.content').getBoundingClientRect().height+rowGap)/(rowHeight+rowGap));
-//       item.style.gridRowEnd = "span "+rowSpan;
-// }
-  
-// function resizeAllGridItems(){
-//     allItems = document.getElementsByClassName("item");
-//     for(x=0;x<allItems.length;x++){
-//       resizeGridItem(allItems[x]);
-//     }
-// }
-  
-// function resizeInstance(instance){
-//       item = instance.elements[0];
-//     resizeGridItem(item);
-// }
-
-// window.onload = resizeAllGridItems();
-// window.addEventListener("resize", resizeAllGridItems);
-  
-// allItems = document.getElementsByClassName("item");
-// for(x=0;x<allItems.length;x++){
-//     imagesLoaded( allItems[x], resizeInstance);
-// }
-
-function initGrid() {
-    
-}
 
 function initializeLazyLoadOfImages() {
     // var bLazy = new Blazy({
