@@ -17,6 +17,10 @@ function initializeMasonry() {
     $grid.imagesLoaded().progress(function() {
         $grid.masonry('layout');
     });
+
+    setTimeout(() => {
+        $grid.masonry('layout');
+    }, 3000);
 }
 
 
