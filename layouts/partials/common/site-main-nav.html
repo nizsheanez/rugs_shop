@@ -4,17 +4,17 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse ">
+    <!-- <div class="collapse navbar-collapse ">
         <ul class="navbar-nav ml-auto">
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="/products/">All</a>
-            </li> -->
+            </li>
             {{ range ($.Site.GetPage "taxonomyTerm" "categories").Pages }}
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="{{ .Permalink }}">{{ .Title | title }}</a>
-            </li> -->
+            </li>
             {{ end }}
         </ul>
-    </div>
+    </div> -->
     
 </nav>

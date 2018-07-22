@@ -1,15 +1,11 @@
-<!-- {{ $jsFiles := (slice "js/jquery.min.js" "js/masonry.pkgd.min.js" "js/imagesloaded.pkgd.min.js" "js/main.js")}} -->
-{{ $jsFiles := (slice "js/jquery.slim.min.js" "js/masonry.pkgd.min.js" "js/imagesloaded.pkgd.min.js" "js/main.js")}}
-{{ range $jsFiles }}
-    {{ $js := resources.Get . | minify | fingerprint "sha512" }}
-    <script src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" ></script>
-{{end}}
+{{ partial "common/script.html" "js/jquery.slim.min.js" }}
+{{ partial "common/script.html" "js/masonry.pkgd.min.js" }}
+{{ partial "common/script.html" "js/imagesloaded.pkgd.min.js" }}
 
-<!-- <script src="{{ "js/holder.min.js" | absURL }}"></script> -->
-<!-- <script src="{{ "js/propper.min.js" | absURL }}"></script> -->
-<!-- <script src="{{ "js/lodash.min.js" | absURL }}"></script> -->
-<!-- <script src="{{ "js/blazy.min.js" | absURL }}"></script> -->
-<!-- <script src="{{ "bootstrap/js/bootstrap.bundle.min.js" | absURL }}"></script> -->
+<!-- {{ partial "common/script.html" "js/blazy.min.js" }} -->
+<!-- {{ partial "common/script.html" "bootstrap/js/bootstrap.bundle.min.js" }} -->
+
+{{ partial "common/script.html" "js/main.js" }}
 
 <div id="fb-root"></div>
 

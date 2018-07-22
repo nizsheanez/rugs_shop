@@ -9,10 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jquery": "^3.3.1",
-    "bootstrap": "^4.1.2",
     "blazy": "^1.8.2",
+    "bootstrap": "^4.1.2",
+    "imagesloaded": "^4.1.4",
+    "jquery": "^3.3.1",
     "masonry-layout": "^4.2.2",
-    "imagesloaded": "^4.1.4"
+    "popper.js": "^1.14.3"
   }
 }

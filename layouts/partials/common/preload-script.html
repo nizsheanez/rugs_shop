@@ -1,0 +1,2 @@
+{{ $js := resources.Get . | minify | fingerprint "sha512" }}
+<link rel="preload" href="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}" as="script">
